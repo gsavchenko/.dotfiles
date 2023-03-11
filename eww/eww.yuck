@@ -80,17 +80,24 @@
 (bright)
 (volum)))
 
-;; Clock Widgets ;;
 (defwidget time []
-	(box	:orientation "v" 
-			:class "time" 
-			:valign "end"
-	(button	:onclick "scripts/popup calendar"	
-			:class "time-hour" hour)
-	(button	:onclick "scripts/popup calendar"	
-			:class "time-min"  min)))
-(defpoll hour	:interval "1s"	"date '+%H'")
-(defpoll min	:interval "1s"	"date '+%M'")
+  (box  :orientation "v"
+			  :class "time"
+			  :valign "end"
+
+    (button :onclick "scripts/popup calendar"
+			      hour)
+
+    (button :onclick "scripts/popup calendar"
+			      minute)
+
+    (button :onclick "scripts/popup calendar"
+            :class "meridiem"
+            meridiem)))
+
+(defpoll hour :interval "1s"	"date '+%I'")
+(defpoll minute :interval "1s"	"date '+%M'")
+(defpoll meridiem :interval "1s" "date '+%p'")
 
 ;; Calendar Widgets ;;
 (defwidget cal []
@@ -135,11 +142,11 @@
 
 	        (button :class "button-quit"
 				          :tooltip "Logout"
-				          :onclick "killall bspwm" "")
+				          :onclick "killall bspwm" "󰗽")
 
 	        (button :class "button-lock"
 				          :tooltip "Lock Screen"
-				          :onclick "betterlockscreen -l" "")))
+				          :onclick "betterlockscreen -l" "")))
 
 	    (button :class "button-off"
 			        :tooltip "Shutdown"
@@ -154,12 +161,11 @@
 (launcher)
 (workspaces)))
 
-;; Bottom Widgets ;;
 (defwidget bottom []
-	(box	:orientation "v"
-			:space-evenly false
-(time)
-(power)))
+  (box  :orientation "v"
+			  :space-evenly false
+    (time)
+    (power)))
 
 ;; End Widgets ;;
 (defwidget end []
