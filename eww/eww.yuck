@@ -1,16 +1,14 @@
 ;; put path to aesthetic bar config files here ;;
 (defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;							Widget Section's							 ;;	
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Launcher Widgets ;;
+;; Widgets Section ;;
+
 (defwidget launcher []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :spacing -15
-  	(button :class "launcher_icon" 
-		   	:onclick "scripts/popup launcher"  "")))
+  (box  :orientation "v" 
+	      :space-evenly "false" 
+		    :spacing -15
+    (button :class "launcher_icon" 
+		   	    :onclick "scripts/popup launcher"  "")))
 
 ;; Workspaces Widgets ;;
 (defwidget workspaces []
@@ -153,13 +151,12 @@
 			        :onclick "shutdown now"	""))))
 (defvar power false)
 
-;; Top Widgets ;;
 (defwidget top []
-	(box	:orientation "v" 
-			:space-evenly "false" 
-			:valign "start" 
-(launcher)
-(workspaces)))
+  (box  :orientation "v"
+			  :space-evenly "false"
+			  :valign "start"
+    (launcher)
+    (workspaces)))
 
 (defwidget bottom []
   (box  :orientation "v"
