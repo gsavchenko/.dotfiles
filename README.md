@@ -6,3 +6,5 @@
 - hyprpaper
 - lazyvim
 - eww
+- zsh
+- powerlevel10k
