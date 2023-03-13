@@ -144,7 +144,7 @@
 
 	        (button :class "button-lock"
 				          :tooltip "Lock Screen"
-				          :onclick "betterlockscreen -l" "")))
+				          :onclick "scripts/swaylock" "")))
 
 	    (button :class "button-off"
 			        :tooltip "Shutdown"

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Main
+ring_color="2d6354"
+key_hl_color="619369"
+text_color="bfcbb3"
+inside_color="00000088"
+
+# Verified
+ring_ver_color="619369"
+inside_ver_color="90A96C"
+text_ver_color="2d6354"
+
+# Wrong
+ring_wrong_color="90A96C"
+inside_wrong_color="B1A244"
+text_wrong_color="4E7151"
+
+# Clear
+ring_clear_color="2d6354"
+inside_clear_color="bfcbb3"
+text_clear_color="2d6354"
+
+# Time
+time_string="%I:%M%p"
+
+swaylock \
+	--screenshots \
+	--clock \
+	--timestr $time_string \
+	\
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	\
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	\
+	--key-hl-color $key_hl_color \
+	--line-color 00000000 \
+	--separator-color 00000000 \
+	\
+	--ring-color $ring_color \
+	--inside-color $inside_color \
+	--text-color $text_color \
+	\
+	--inside-ver-color $inside_ver_color \
+	--ring-ver-color $ring_ver_color \
+	--text-ver-color $text_ver_color \
+	\
+	--ring-wrong-color $ring_wrong_color \
+	--inside-wrong-color $inside_wrong_color \
+	--text-wrong-color $text_wrong_color \
+	\
+	--ring-clear-color $ring_clear_color \
+	--inside-clear-color $inside_clear_color \
+	--text-clear-color $text_clear_color
